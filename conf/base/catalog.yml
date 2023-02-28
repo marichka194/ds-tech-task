@@ -33,6 +33,7 @@ product_interactions_pivoted_json:
   filepath: data/04_processed/output.json
   save_args:
     orient: 'records'
+    indent: 4
 
 product_interactions_pivoted_xlsx:
   type: pandas.ExcelDataSet
