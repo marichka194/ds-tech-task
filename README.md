@@ -7,15 +7,16 @@ data in CSV, JSON, or Excel format.
 
 ## Install dependencies
 
-Declare any dependencies in `src/requirements.txt` for `pip` installation and `src/environment.yml` for `conda` installation.
-
-To install them, run:
+To install the dependencies, run:
 
 ```
 pip install -r src/requirements.txt
 ```
 
 ## Run Kedro pipeline
+
+Code of the node-methods and code describing the pipeline can be found in `src/ds_tech_task/pipelines/data_processing/` folder.
+
 
 To run the pipeline and get output in all the three available formats, run it with:
 
