@@ -1,0 +1,13 @@
+customer_id,occupation,type,product_of_interaction,bird,boat,call,email,post
+1,Jedi,Red,Sand,,,,2.0,
+2,Batman,Orange,Sand,1.0,,,,
+3,Santa Claus,Blue,Orange,,,,1.0,
+4,Truck,Orange,Sand,2.0,,1.0,,
+5,Orange,Blue,Sand,,1.0,1.0,,1.0
+6,pineapple,Red,Sand,,,,1.0,
+7,Sausage,Red,Sand,,,1.0,,
+8,Milkman,Red,Sand,1.0,,,,
+9,Pirate,Orange,Sand,,1.0,,,
+10,Lawyer,Blue,Sand,,,,1.0,
+11,Doctor,Orange,Sand,,,,1.0,
+12,Plummer,Red,Sand,2.0,,,,
