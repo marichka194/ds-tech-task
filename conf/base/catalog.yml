@@ -1,0 +1,42 @@
+customers:
+  type: pandas.ExcelDataSet
+  filepath: data/01_raw/Test_data.xlsx
+  load_args:
+    sheet_name: 'CRM'
+    engine: openpyxl
+
+interactions:
+  type: pandas.ExcelDataSet
+  filepath: data/01_raw/Test_data.xlsx
+  load_args:
+    sheet_name: 'Interactions_crm'
+    parse_dates: ['date_start']
+    engine: openpyxl
+
+products:
+  type: pandas.ExcelDataSet
+  filepath: data/01_raw/Test_data.xlsx
+  load_args:
+    sheet_name: 'products'
+    parse_dates: ['date']
+    engine: openpyxl
+
+product_interactions_pivoted_csv:
+  type: pandas.CSVDataSet
+  filepath: data/04_processed/output.csv
+  save_args:
+    mode: w
+
+
+product_interactions_pivoted_json:
+  type: pandas.JSONDataSet
+  filepath: data/04_processed/output.json
+  save_args:
+    orient: 'records'
+
+product_interactions_pivoted_xlsx:
+  type: pandas.ExcelDataSet
+  filepath: data/04_processed/output.xlsx
+  save_args:
+    sheet_name: 'output'
+    engine: openpyxl
