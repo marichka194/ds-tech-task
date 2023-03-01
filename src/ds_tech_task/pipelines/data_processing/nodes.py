@@ -3,6 +3,20 @@ import numpy as np
 import pandas as pd
 
 
+def lower_column_names(df):
+    """Converts the df column names to lower case.
+
+    Args:
+        df: DataFrame.
+    Returns:
+        DataFrame with all column names in lower case.
+    """
+
+    new_columns_names = [col.lower() for col in df.columns]
+    column_mapping = dict(zip(list(df.columns), new_columns_names))
+    return df.rename(columns=column_mapping)
+
+
 def preprocess_customers_data(customers: pd.DataFrame) -> pd.DataFrame:
     """Replaces NaN values with None and converts the column names to lower case.
 
@@ -16,9 +30,7 @@ def preprocess_customers_data(customers: pd.DataFrame) -> pd.DataFrame:
         np.nan, "None"
     )
 
-    new_columns_names = [col.lower() for col in customers.columns]
-    column_mapping = dict(zip(list(customers.columns), new_columns_names))
-    return customers.rename(columns=column_mapping)
+    return lower_column_names(customers)
 
 
 def preprocess_interactions_data(interactions: pd.DataFrame) -> pd.DataFrame:
@@ -117,13 +129,4 @@ def clean_interactions_pivoted(
         DataFrame with all column names in lower case.
     """
 
-    new_columns_names = [col.lower() for col in product_interactions_pivoted.columns]
-    column_mapping = dict(
-        zip(list(product_interactions_pivoted.columns), new_columns_names)
-    )
-    product_interactions_pivoted = product_interactions_pivoted.rename(columns=column_mapping)
-
-    logger = logging.getLogger(__name__)
-    logger.info("Data will be now saved to data/04_processed/ folder")
-
-    return product_interactions_pivoted
+    return lower_column_names(product_interactions_pivoted)
